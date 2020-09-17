@@ -48,3 +48,5 @@ Route::get('/karyawan/cari','KaryawanController@cari');
 
 Route::get('/input', 'ValidasiController@input');
 Route::post('/proses', 'ValidasiController@proses');
+
+Route::get('/pegawai', 'PegawaiController@list');

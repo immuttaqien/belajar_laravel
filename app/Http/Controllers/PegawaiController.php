@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
+
+// panggil model pegawai
+use App\Pegawai;
  
 class PegawaiController extends Controller
 {
@@ -19,5 +22,14 @@ class PegawaiController extends Controller
         $alamat = $request->input('alamat');
         
         return "Nama : ".$nama.", Alamat : ".$alamat;
+    }
+
+    public function list()
+    {
+        // mengambil data pegawai
+        $pegawai = Pegawai::all();
+    
+        // mengirim data pegawai ke view pegawai
+        return view('pegawai', ['pegawai' => $pegawai]);
     }
 }
