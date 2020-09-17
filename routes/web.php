@@ -44,3 +44,7 @@ Route::post('/karyawan/store','KaryawanController@store');
 Route::get('/karyawan/edit/{id}','KaryawanController@edit');
 Route::post('/karyawan/update','KaryawanController@update');
 Route::get('/karyawan/hapus/{id}','KaryawanController@hapus');
+Route::get('/karyawan/cari','KaryawanController@cari');
+
+Route::get('/input', 'ValidasiController@input');
+Route::post('/proses', 'ValidasiController@proses');

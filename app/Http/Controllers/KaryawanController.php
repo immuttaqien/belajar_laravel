@@ -10,7 +10,7 @@ class KaryawanController extends Controller
     public function index()
     {
      // mengambil data dari table karyawan
-     $karyawan = DB::table('karyawan')->get();
+     $karyawan = DB::table('karyawan')->paginate(10);
  
      // mengirim data karyawan ke view index
      return view('index', ['karyawan' => $karyawan]);
@@ -66,5 +66,19 @@ class KaryawanController extends Controller
 
         // alihkan halaman ke halaman karyawan
         return redirect('/karyawan');
+    }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+        
+        // mengambil data dari table karyawan sesuai pencarian data
+        $karyawan = DB::table('karyawan')
+        ->where('nama','like',"%".$cari."%")
+        ->paginate();
+        
+        // mengirim data karyawan ke view index
+        return view('index', ['karyawan' => $karyawan]);    
     }
 }
