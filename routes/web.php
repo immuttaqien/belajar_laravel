@@ -55,3 +55,11 @@ Route::post('/pegawai/store', 'PegawaiController@store');
 Route::get('/pegawai/edit/{id}', 'PegawaiController@edit');
 Route::put('/pegawai/update/{id}', 'PegawaiController@update');
 Route::get('/pegawai/hapus/{id}', 'PegawaiController@delete');
+
+Route::get('/guru','GuruController@index');
+Route::get('/guru/hapus/{id}','GuruController@hapus');
+Route::get('/guru/trash','GuruController@trash');
+Route::get('/guru/restore/{id}','GuruController@restore');
+Route::get('/guru/restore_all','GuruController@restore_all');
+Route::get('/guru/delete/{id}','GuruController@delete');
+Route::get('/guru/delete_all','GuruController@delete_all');
