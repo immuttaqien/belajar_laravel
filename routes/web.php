@@ -63,3 +63,5 @@ Route::get('/guru/restore/{id}','GuruController@restore');
 Route::get('/guru/restore_all','GuruController@restore_all');
 Route::get('/guru/delete/{id}','GuruController@delete');
 Route::get('/guru/delete_all','GuruController@delete_all');
+
+Route::get('/pengguna','PenggunaController@index');
