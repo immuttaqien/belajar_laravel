@@ -65,3 +65,4 @@ Route::get('/guru/delete/{id}','GuruController@delete');
 Route::get('/guru/delete_all','GuruController@delete_all');
 
 Route::get('/pengguna','PenggunaController@index');
+Route::get('/article','WebController@index');
